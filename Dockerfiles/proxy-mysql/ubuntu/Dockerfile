@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
-ARG MAJOR_VERSION=6.0
+ARG MAJOR_VERSION=7.0
 ARG ZBX_VERSION=${MAJOR_VERSION}.2
 ARG BUILD_BASE_IMAGE=zabbix-build-mysql:ubuntu-${ZBX_VERSION}
-ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
+ARG ZBX_SOURCES=https://github.com/KamilMatejuk/zabbix-docker.git
 
 FROM ${BUILD_BASE_IMAGE} as builder
 
@@ -10,7 +10,7 @@ FROM ubuntu:focal
 
 ARG MAJOR_VERSION
 ARG ZBX_VERSION
-ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
+ARG ZBX_SOURCES=https://github.com/KamilMatejuk/zabbix-docker.git
 
 ENV TERM=xterm \
     ZBX_VERSION=${ZBX_VERSION} ZBX_SOURCES=${ZBX_SOURCES} \

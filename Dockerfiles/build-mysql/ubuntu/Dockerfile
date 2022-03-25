@@ -1,13 +1,18 @@
 # syntax=docker/dockerfile:1
-ARG MAJOR_VERSION=6.0
-ARG ZBX_VERSION=${MAJOR_VERSION}.2
+ARG MAJOR_VERSION=7.0
+ARG ZBX_VERSION=${MAJOR_VERSION}.1
 ARG BUILD_BASE_IMAGE=zabbix-build-base:ubuntu-${ZBX_VERSION}
 
 FROM ${BUILD_BASE_IMAGE} as builder
 
 ARG MAJOR_VERSION
 ARG ZBX_VERSION
-ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
+ARG ZBX_SOURCES=https://github.com/KamilMatejuk/zabbix-docker.git
+
+ENV http_proxy http://proxy-mu.intel.com:911
+ENV HTTP_PROXY http://proxy-mu.intel.com:911
+ENV https_proxy http://proxy-mu.intel.com:912
+ENV HTTPS_PROXY http://proxy-mu.intel.com:912
 
 LABEL org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" \
       org.opencontainers.image.description="Zabbix build base for MySQL based images" \
@@ -43,6 +48,7 @@ RUN set -eux && \
     git -c advice.detachedHead=false clone ${ZBX_SOURCES} --branch ${ZBX_VERSION} --depth 1 --single-branch /tmp/zabbix-${ZBX_VERSION} && \
     cd /tmp/zabbix-${ZBX_VERSION} && \
     zabbix_revision=`git rev-parse --short HEAD` && \
+    ls include/ && \
     sed -i "s/{ZABBIX_REVISION}/$zabbix_revision/g" include/version.h && \
     sed -i "s/{ZABBIX_REVISION}/$zabbix_revision/g" src/go/pkg/version/version.go && \
     sed -i "s/{ZABBIX_REVISION}/$zabbix_revision/g" src/zabbix_java/src/com/zabbix/gateway/GeneralInformation.java && \

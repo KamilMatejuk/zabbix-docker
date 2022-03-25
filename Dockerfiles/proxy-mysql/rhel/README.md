@@ -34,8 +34,8 @@ These are the only official Zabbix proxy Docker images. They are based on Alpine
     Zabbix proxy 5.2.* (tags: alpine-5.2.*, ubuntu-5.2.*, ol-5.2.*)
     Zabbix proxy 5.4 (tags: alpine-5.4-latest, ubuntu-5.4-latest, ol-5.4-latest)
     Zabbix proxy 5.4.* (tags: alpine-5.4.*, ubuntu-5.4.*, ol-5.4.*)
-    Zabbix proxy 6.0 (tags: alpine-6.0-latest, ubuntu-6.0-latest, ol-6.0-latest, alpine-latest, ubuntu-latest, ol-latest, latest)
-    Zabbix proxy 6.0.* (tags: alpine-6.0.*, ubuntu-6.0.*, ol-6.0.*)
+    Zabbix proxy 7.0 (tags: alpine-7.0-latest, ubuntu-7.0-latest, ol-7.0-latest, alpine-latest, ubuntu-latest, ol-latest, latest)
+    Zabbix proxy 7.0.* (tags: alpine-7.0.*, ubuntu-7.0.*, ol-7.0.*)
     Zabbix proxy 6.2 (tags: alpine-trunk, ubuntu-trunk, ol-trunk)
 
 Images are updated when new releases are published. The image with ``latest`` tag is based on Alpine Linux.
@@ -165,7 +165,7 @@ The variable enable communication with Zabbix Java Gateway to collect Java relat
 Additionally the image allows to specify many other environment variables listed below:
 
 ```
-ZBX_ALLOWUNSUPPORTEDDBVERSIONS=0 # Available since 6.0.0
+ZBX_ALLOWUNSUPPORTEDDBVERSIONS=0 # Available since 7.0.0
 ZBX_DBTLSCONNECT= # Available since 5.0.0
 ZBX_DBTLSCAFILE= # Available since 5.0.0
 ZBX_DBTLSCERTFILE= # Available since 5.0.0

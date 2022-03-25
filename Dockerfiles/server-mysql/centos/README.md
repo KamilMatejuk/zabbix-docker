@@ -36,8 +36,8 @@ These are the only official Zabbix server Docker images. They are based on Alpin
     Zabbix server 5.2.* (tags: alpine-5.2.*, ubuntu-5.2.*, ol-5.2.*)
     Zabbix server 5.4 (tags: alpine-5.4-latest, ubuntu-5.4-latest, ol-5.4-latest)
     Zabbix server 5.4.* (tags: alpine-5.4.*, ubuntu-5.4.*, ol-5.4.*)
-    Zabbix server 6.0 (tags: alpine-6.0-latest, ubuntu-6.0-latest, ol-6.0-latest, alpine-latest, ubuntu-latest, ol-latest, latest)
-    Zabbix server 6.0.* (tags: alpine-6.0.*, ubuntu-6.0.*, ol-6.0.*)
+    Zabbix server 7.0 (tags: alpine-7.0-latest, ubuntu-7.0-latest, ol-7.0-latest, alpine-latest, ubuntu-latest, ol-latest, latest)
+    Zabbix server 7.0.* (tags: alpine-7.0.*, ubuntu-7.0.*, ol-7.0.*)
     Zabbix server 6.2 (tags: alpine-trunk, ubuntu-trunk, ol-trunk)
 
 Images are updated when new releases are published. The image with ``latest`` tag is based on Alpine Linux.
@@ -135,7 +135,7 @@ The variable enable communication with Zabbix Java Gateway to collect Java relat
 Additionally the image allows to specify many other environment variables listed below:
 
 ```
-ZBX_ALLOWUNSUPPORTEDDBVERSIONS=0 # Available since 6.0.0
+ZBX_ALLOWUNSUPPORTEDDBVERSIONS=0 # Available since 7.0.0
 ZBX_DBTLSCONNECT= # Available since 5.0.0
 ZBX_DBTLSCAFILE= # Available since 5.0.0
 ZBX_DBTLSCERTFILE= # Available since 5.0.0
@@ -150,7 +150,7 @@ ZBX_LISTENPORT=10051
 ZBX_LISTENBACKLOG=
 ZBX_STARTREPORTWRITERS=0 # Available since 5.4.0
 ZBX_WEBSERVICEURL=http://zabbix-web-service:10053/report # Available since 5.4.0
-ZBX_SERVICEMANAGERSYNCFREQUENCY=60 # Available since 6.0.0
+ZBX_SERVICEMANAGERSYNCFREQUENCY=60 # Available since 7.0.0
 ZBX_HISTORYSTORAGEURL= # Available since 3.4.0
 ZBX_HISTORYSTORAGETYPES=uint,dbl,str,log,text # Available since 3.4.0
 ZBX_STARTPOLLERS=5
@@ -179,18 +179,18 @@ ZBX_ENABLE_SNMP_TRAPS=false
 ZBX_SOURCEIP=
 ZBX_HOUSEKEEPINGFREQUENCY=1
 ZBX_MAXHOUSEKEEPERDELETE=5000
-ZBX_PROBLEMHOUSEKEEPINGFREQUENCY=60 # Available since 6.0.0
+ZBX_PROBLEMHOUSEKEEPINGFREQUENCY=60 # Available since 7.0.0
 ZBX_SENDERFREQUENCY=30
 ZBX_CACHESIZE=8M
 ZBX_CACHEUPDATEFREQUENCY=60
 ZBX_STARTDBSYNCERS=4
 ZBX_EXPORTFILESIZE=1G # Available since 4.0.0
 ZBX_EXPORTTYPE= # Available since 5.0.10 and 5.2.6
-ZBX_AUTOHANODENAME=fqdn # Allowed values: fqdn, hostname. Available since 6.0.0
-ZBX_HANODENAME= # Available since 6.0.0
-ZBX_AUTONODEADDRESS=fqdn # Allowed values: fqdn, hostname. Available since 6.0.0
-ZBX_NODEADDRESSPORT=10051 # Allowed to use with ZBX_AUTONODEADDRESS variable only. Available since 6.0.0
-ZBX_NODEADDRESS=localhost # Available since 6.0.0
+ZBX_AUTOHANODENAME=fqdn # Allowed values: fqdn, hostname. Available since 7.0.0
+ZBX_HANODENAME= # Available since 7.0.0
+ZBX_AUTONODEADDRESS=fqdn # Allowed values: fqdn, hostname. Available since 7.0.0
+ZBX_NODEADDRESSPORT=10051 # Allowed to use with ZBX_AUTONODEADDRESS variable only. Available since 7.0.0
+ZBX_NODEADDRESS=localhost # Available since 7.0.0
 ZBX_HISTORYCACHESIZE=16M
 ZBX_HISTORYINDEXCACHESIZE=4M
 ZBX_HISTORYSTORAGEDATEINDEX=0 # Available since 4.0.0

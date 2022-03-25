@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # escape=`
-ARG MAJOR_VERSION=6.0
+ARG MAJOR_VERSION=7.0
 ARG ZBX_VERSION=${MAJOR_VERSION}.2
 ARG BUILD_BASE_IMAGE=zabbix-build-agent:ltsc2022-agent2-${ZBX_VERSION}
 
@@ -12,7 +12,7 @@ FROM $BASE_IMAGE
 
 ARG MAJOR_VERSION
 ARG ZBX_VERSION
-ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
+ARG ZBX_SOURCES=https://github.com/KamilMatejuk/zabbix-docker.git
 
 LABEL org.opencontainers.image.title="Zabbix agent 2" `
       org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" `

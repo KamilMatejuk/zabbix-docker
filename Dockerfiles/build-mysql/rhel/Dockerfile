@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG MAJOR_VERSION=6.0
+ARG MAJOR_VERSION=7.0
 ARG RELEASE=2
 ARG ZBX_VERSION=${MAJOR_VERSION}.2
 ARG BUILD_BASE_IMAGE=zabbix-build-base:rhel-${ZBX_VERSION}
@@ -9,7 +9,7 @@ FROM ${BUILD_BASE_IMAGE} as builder
 ARG MAJOR_VERSION
 ARG RELEASE
 ARG ZBX_VERSION
-ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
+ARG ZBX_SOURCES=https://github.com/KamilMatejuk/zabbix-docker.git
 
 LABEL description="Zabbix build base for MySQL based images" \
       maintainer="alexey.pustovalov@zabbix.com" \
