@@ -29,8 +29,13 @@ ENV ZBX_VERSION=$ZBX_VERSION `
     GIT_URL=$GIT_URL MINGW_URL=$MINGW_URL CYGWIN_URL=$CYGWIN_URL GOLANG_URL=$GOLANG_URL SEVEN_ZIP_URL=$SEVEN_ZIP_URL `
     PCRE2_URL=$PCRE2_URL OPENSSL_URL=$OPENSSL_URL
 
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
 LABEL org.opencontainers.image.title="Zabbix agent 2 build base for Windows" `
-      org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" `
+      org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" `
       org.opencontainers.image.vendor="Zabbix LLC" `
       org.opencontainers.image.url="https://zabbix.com/" `
       org.opencontainers.image.description="Zabbix build base image contains all required packages to build Zabbix agent 2 images" `

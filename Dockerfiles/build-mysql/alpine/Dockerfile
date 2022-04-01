@@ -9,7 +9,12 @@ ARG MAJOR_VERSION
 ARG ZBX_VERSION
 ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
 
-LABEL org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" \
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
+LABEL org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" \
       org.opencontainers.image.description="Zabbix build base for MySQL based images" \
       org.opencontainers.image.documentation="https://www.zabbix.com/documentation/${MAJOR_VERSION}/manual/installation/containers" \
       org.opencontainers.image.licenses="GPL v2.0" \

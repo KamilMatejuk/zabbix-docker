@@ -16,7 +16,12 @@ ENV TERM=xterm \
     ZBX_VERSION=${ZBX_VERSION} ZBX_SOURCES=${ZBX_SOURCES} \
     MIBDIRS=/var/lib/snmp/mibs/ietf:/var/lib/snmp/mibs/iana:/usr/share/snmp/mibs:/var/lib/zabbix/mibs MIBS=+ALL
 
-LABEL org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" \
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
+LABEL org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" \
       org.opencontainers.image.description="Zabbix proxy with MySQL database support" \
       org.opencontainers.image.documentation="https://www.zabbix.com/documentation/${MAJOR_VERSION}/manual/installation/containers" \
       org.opencontainers.image.licenses="GPL v2.0" \

@@ -46,7 +46,8 @@ else
     exit 1;
 fi
 
-DOCKER_BUILDKIT=1 $exec_command build -t zabbix-$app_component:$os-$version --build-arg VCS_REF="$VCS_REF" --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` -f Dockerfile .
+proxy="--build-arg http_proxy=http://proxy-mu.intel.com:911 --build-arg https_proxy=http://proxy-mu.intel.com:912"
+DOCKER_BUILDKIT=1 $exec_command build -t zabbix-$app_component:$os-$version $proxy --build-arg VCS_REF="$VCS_REF" --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` -f Dockerfile .
 
 if [ "$type" != "build" ]; then
     links=""

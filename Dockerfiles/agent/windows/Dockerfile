@@ -14,8 +14,13 @@ ARG MAJOR_VERSION
 ARG ZBX_VERSION
 ARG ZBX_SOURCES=https://git.zabbix.com/scm/zbx/zabbix.git
 
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
 LABEL org.opencontainers.image.title="Zabbix agent" `
-      org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" `
+      org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" `
       org.opencontainers.image.vendor="Zabbix LLC" `
       org.opencontainers.image.url="https://zabbix.com/" `
       org.opencontainers.image.description="Zabbix agent is deployed on a monitoring target to actively monitor local resources and applications" `

@@ -25,8 +25,13 @@ ENV ZBX_VERSION=$ZBX_VERSION `
     PCRE2_VERSION=$PCRE2_VERSION OPENSSL_VERSION=$OPENSSL_VERSION LIBMODBUS_VERSION=$LIBMODBUS_VERSION `
     GIT_URL=$GIT_URL NASM_URL=$NASM_URL PERL_URL=$PERL_URL LIBMODBUS_URL=$LIBMODBUS_URL PCRE2_URL=$PCRE2_URL OPENSSL_URL=$OPENSSL_URL
 
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
 LABEL org.opencontainers.image.title="Zabbix agent build base for Windows" `
-      org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" `
+      org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" `
       org.opencontainers.image.vendor="Zabbix LLC" `
       org.opencontainers.image.url="https://zabbix.com/" `
       org.opencontainers.image.description="Zabbix build base image contains all required packages to build Zabbix agent images" `

@@ -15,8 +15,13 @@ ENV TERM=xterm \
     ZBX_VERSION=${ZBX_VERSION} ZBX_SOURCES=${ZBX_SOURCES} \
     MIBDIRS=/usr/share/snmp/mibs:/var/lib/zabbix/mibs MIBS=+ALL
 
+ARG http_proxy=
+ENV http_proxy ${http_proxy}
+ARG https_proxy=
+ENV https_proxy ${https_proxy}
+
 LABEL org.opencontainers.image.title="Zabbix server (PostgreSQL)" \
-      org.opencontainers.image.authors="Alexey Pustovalov <alexey.pustovalov@zabbix.com>" \
+      org.opencontainers.image.authors="Kamil Matejuk <kamil.matejuk@intel.com>" \
       org.opencontainers.image.vendor="Zabbix LLC" \
       org.opencontainers.image.url="https://zabbix.com/" \
       org.opencontainers.image.description="Zabbix server with PostgreSQL database support" \
